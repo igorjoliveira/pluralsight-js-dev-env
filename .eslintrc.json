@@ -17,8 +17,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:angular/johnpapa"
+    "plugin:react/recommended"
+    // "plugin:angular/johnpapa"
   ],
   "rules": {
       "no-console": 1
