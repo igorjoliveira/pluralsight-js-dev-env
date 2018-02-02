@@ -2,7 +2,7 @@
 environment:
   matrix:
   #node.js
-    -nodejs_version: "8"
+  - nodejs_version: "8"
 
 #Install scripts.(runs after repo cloning)
 install:
@@ -15,7 +15,7 @@ install:
 test_scripts:
   #output useful info for debbugging
   - node --version
-  - npm  --version
+  - npm --version
   #run tests
   - npm test
 
