@@ -1,0 +1,23 @@
+#Test against thi version od node.js
+environment:
+  matrix:
+  #node.js
+    -nodejs_version: "8"
+
+#Install scripts.(runs after repo cloning)
+install:
+  #Get the latest stable version of node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  #intall modules
+  - npm install
+
+#Post-install test scripts.
+test_scripts:
+  #output useful info for debbugging
+  - node --version
+  - npm  --version
+  #run tests
+  - npm test
+
+#don't actually build
+build: off
