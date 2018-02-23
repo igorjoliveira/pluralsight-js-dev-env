@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 58,
+      "firstName": "Micaela",
+      "lastName": "Vandervort",
+      "email": "Columbus.Crist88@hotmail.com"
+    },
+    {
+      "id": 59,
+      "firstName": "Julio",
+      "lastName": "Murazik",
+      "email": "Horacio_Rowe@hotmail.com"
+    },
+    {
+      "id": 61,
+      "firstName": "Loraine",
+      "lastName": "Cole",
+      "email": "Francisca27@hotmail.com"
+    }
+  ]
+}

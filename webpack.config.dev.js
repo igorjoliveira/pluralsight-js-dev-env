@@ -4,7 +4,8 @@ import webpack from 'webpack';
 export default {
   devtool: 'inline-source-map',
   entry: [
-    path.resolve(__dirname, 'src/index')
+    path.resolve(__dirname, 'src/index'),
+    path.resolve(__dirname, 'src/user')
   ],
   target: 'web',
   output: {

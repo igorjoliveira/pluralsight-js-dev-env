@@ -17,5 +17,7 @@ describe('index.html', () => {
     const h1 = document.getElementsByTagName('h1')[0];
 
     expect(h1.innerHTML).to.eq('Hello World!');
+
+    document.close();
   });
 });
