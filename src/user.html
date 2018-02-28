@@ -2,9 +2,10 @@
 <html lang="eng">
   <head>
     <meta charset="UTF-8" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <h1>Users</h1>
+    <h1><%= htmlWebpackPlugin.options.title %></h1>
 
     <table>
       <thead>
@@ -16,7 +17,5 @@
       </thead>
       <tbody id="users"></tbody>
     </table>
-
-    <script src="bundle.js"></script>
   </body>
 </html>

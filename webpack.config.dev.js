@@ -1,19 +1,34 @@
 import path from 'path';
 import webpack from 'webpack';
+import htmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   devtool: 'inline-source-map',
-  entry: [
-    path.resolve(__dirname, 'src/index'),
-    path.resolve(__dirname, 'src/user')
-  ],
   target: 'web',
+  entry: {
+    commons: path.resolve(__dirname, 'src/commons'),
+    index: path.resolve(__dirname, 'src/index'),
+    user: path.resolve(__dirname, 'src/user')
+  },
   output: {
     path: path.resolve(__dirname, 'src'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   plugins: [
+    new htmlWebpackPlugin({
+      title: "index",
+      template: 'src/index.html',
+      inject: true,
+      chunks: ['commons', 'index'],
+    }),
+    new htmlWebpackPlugin({
+      title: "users",
+      filename: "user.html",
+      template: 'src/user.html',
+      inject: true,
+      chunks: ['commons', 'user'],
+    }),
     new webpack.LoaderOptionsPlugin({
       debug: true
     })

@@ -1,18 +1,18 @@
+
 import express from 'express';
+import path from 'path';
 import open from 'open';
-import webpack from 'webpack';
-import config from '../webpack.config.dev';
-import webpackMiddleware from 'webpack-dev-middleware';
+import compression from 'compression';
 
 const port = 3000;
 const app = express();
 
-const webpackInstance = webpackMiddleware(webpack(config), {
-    publicPath: config.output.publicPath
-  }
-);
+app.use(compression());
+app.use(express.static('dist'));
 
-app.use(webpackInstance);
+app.get('/user', function(req, res){
+  res.sendFile(path.join(__dirname, '../dist/user.html'));
+});
 
 app.get('/api/users', function(req, res){
   res.json([
