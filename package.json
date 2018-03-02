@@ -19,7 +19,8 @@
         "clean-dist": "rimraf ./dist && mkdir dist",
         "prebuild": "npm-run-all clean-dist test lint",
         "build": "babel-node buildScripts/build.js",
-        "postbuild": "babel-node buildScripts/distServer.js"
+        "postbuild": "babel-node buildScripts/distServer.js",
+        "deploy": "surge ./dist"
     },
     "author": "Cory House",
     "dependencies": {},
@@ -61,6 +62,7 @@
         "webpack-md5-hash": "^0.0.6",
         "extract-text-webpack-plugin": "^3.0.2",
         "html-loader": "^0.5.5",
-        "file-loader": "^1.1.10"
+        "file-loader": "^1.1.10",
+        "surge": "^0.19.0"
     }
 }
